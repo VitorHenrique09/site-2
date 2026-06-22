@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
         form.addEventListener('submit', (event) => {
             event.preventDefault(); // Impede o recarregamento da página
 
-            // Captura os dados digitados
-            const nome = form.querySelector('input[type="text"]').value;
-            const email = form.querySelector('input[type="email"]').value;
-            const mensagem = form.querySelector('textarea').value;
+            // Captura os dados digitados de forma segura
+            const nome = form.querySelector('input[type="text"]').value.trim();
+            const email = form.querySelector('input[type="email"]').value.trim();
+            const mensagem = form.querySelector('textarea').value.trim();
 
             // Simulação de envio bem-sucedido
             if (nome && email && mensagem) {
@@ -56,8 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
             const navbar = document.querySelector('nav ul');
-            // Caso você decida adicionar uma classe 'active' futuramente para abrir/fechar o menu:
-            if (navbar.classList.contains('active')) {
+            if (navbar && navbar.classList.contains('active')) {
                 navbar.classList.remove('active');
             }
         });
