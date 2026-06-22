@@ -1,15 +1,19 @@
-/* Configurações Gerais / Reset */
+/* --- RESET E CONFIGURAÇÕES GERAIS --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
     color: #333;
-    scroll-behavior: smooth;
+    line-height: 1.6;
+    background-color: #ffffff;
 }
 
 .container {
@@ -23,10 +27,10 @@ body {
 }
 
 h2 {
+    font-size: 2.2rem;
     text-align: center;
-    font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #0b3c5d;
+    color: #003366; /* Azul Escuro Institucional */
     position: relative;
 }
 
@@ -35,73 +39,62 @@ h2::after {
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #328cc1;
+    background-color: #ffcc00; /* Amarelo Ouro */
     margin: 10px auto 0 auto;
     border-radius: 2px;
 }
 
-.bg-light {
-    background-color: #f9f9f9;
-}
-
-.bg-dark {
-    background-color: #0b3c5d;
-    color: #fff;
-}
-
-.bg-dark h2 {
-    color: #fff;
-}
-
-.text-center {
+p.text-center {
     text-align: center;
     margin-bottom: 40px;
+    color: #666;
 }
 
-/* Botões */
+/* --- BOTÕES --- */
 .btn {
     display: inline-block;
-    padding: 12px 30px;
-    background-color: #328cc1;
-    color: #fff;
+    background-color: #ffcc00;
+    color: #003366;
+    padding: 12px 28px;
     text-decoration: none;
-    border-radius: 5px;
     font-weight: 600;
-    transition: background 0.3s ease;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
     border: none;
     cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #1d6f9a;
+    background-color: #e6b800;
+    transform: translateY(-2px);
 }
 
-/* Header & Navbar */
+/* --- CABEÇALHO E MENU --- */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #003366;
+    color: #fff;
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
 }
 
 .logo h1 {
     font-size: 1.5rem;
-    color: #0b3c5d;
+    font-weight: 700;
 }
 
 .logo span {
     font-size: 0.8rem;
-    color: #777;
+    color: #ffcc00;
     display: block;
-    margin-top: -5px;
 }
 
 nav ul {
@@ -114,31 +107,33 @@ nav ul li {
 }
 
 nav ul li a {
+    color: #fff;
     text-decoration: none;
-    color: #555;
     font-weight: 600;
-    transition: color 0.3s;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #328cc1;
+    color: #ffcc00;
 }
 
-/* Banner Principal (Hero) */
+/* --- SEÇÃO HERO --- */
 .hero {
-    background: linear-gradient(rgba(11, 60, 93, 0.8), rgba(11, 60, 93, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 51, 102, 0.75), rgba(0, 51, 102, 0.75)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200') no-repeat center center/cover;
     height: 70vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
     color: #fff;
+    padding: 0 20px;
 }
 
 .hero-content h2 {
     color: #fff;
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
 }
 
 .hero-content h2::after {
@@ -147,13 +142,13 @@ nav ul li a:hover {
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 600px;
+    margin-bottom: 25px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Seção Sobre */
+/* --- SEÇÃO SOBRE --- */
 .sobre-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -163,19 +158,19 @@ nav ul li a:hover {
 
 .sobre-texto p {
     margin-bottom: 15px;
-    font-size: 1.1rem;
+    text-align: justify;
 }
 
 .valores-box {
-    background-color: #f0f7f4;
+    background-color: #f4f7f6;
     padding: 30px;
-    border-left: 5px solid #328cc1;
+    border-left: 5px solid #003366;
     border-radius: 4px;
 }
 
 .valores-box h3 {
     margin-bottom: 15px;
-    color: #0b3c5d;
+    color: #003366;
 }
 
 .valores-box ul {
@@ -183,54 +178,64 @@ nav ul li a:hover {
 }
 
 .valores-box ul li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-/* Grid de Infraestrutura */
+/* --- GRIDS COMPARTILHADOS --- */
+.bg-light {
+    background-color: #f9f9f9;
+}
+
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
+/* Cards de Infraestrutura */
 .card {
     background: #fff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
+    border-top: 4px solid #ffcc00;
 }
 
 .card h3 {
-    color: #0b3c5d;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    color: #003366;
 }
 
-/* Seção Ensino/Cursos */
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
+/* Itens de Ensino/Cursos */
 .curso-item {
-    background: #f9f9f9;
-    padding: 30px;
+    background: #003366;
+    color: #fff;
+    padding: 35px;
     border-radius: 8px;
-    border-top: 4px solid #0b3c5d;
+    transition: transform 0.3s ease;
 }
 
 .curso-item h3 {
-    color: #0b3c5d;
+    color: #ffcc00;
     margin-bottom: 15px;
 }
 
-/* Contato */
+/* --- SEÇÃO CONTATO --- */
+.bg-dark {
+    background-color: #001a33;
+    color: #fff;
+}
+
+.bg-dark h2 {
+    color: #fff;
+}
+
 .contato-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -239,57 +244,61 @@ nav ul li a:hover {
 }
 
 .contato-info p {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
 }
 
 .contato-form form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .contato-form input, 
 .contato-form textarea {
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+    width: 100%;
+    padding: 12px 15px;
     border-radius: 4px;
-    font-family: inherit;
+    border: 1px solid #ccc;
+    font-size: 1rem;
 }
 
-/* Rodapé */
+.contato-form input:focus, 
+.contato-form textarea:focus {
+    outline: 2px solid #ffcc00;
+}
+
+/* --- RODAPÉ --- */
 footer {
-    background-color: #07273d;
-    color: #aaa;
+    background-color: #000d1a;
+    color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 25px 0;
     font-size: 0.9rem;
 }
 
-footer p {
-    margin-bottom: 5px;
-}
-
-/* Responsividade (Telas menores/Celular) */
+/* --- RESPONSIVIDADE (MOBILE) --- */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        text-align: center;
+        gap: 15px;
     }
 
     nav ul {
-        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
     nav ul li {
-        margin: 0 10px;
+        margin-left: 0;
     }
 
     .hero-content h2 {
         font-size: 2rem;
     }
 
-    .sobre-grid, .grid-2, .contato-grid {
+    .sobre-grid, .grid-3, .grid-2, .contato-grid {
         grid-template-columns: 1fr;
     }
 }
